@@ -4,6 +4,7 @@ import Loader from '../components/Loader'
 import {Island} from '../models/Island'
 // import Sky from '../models/Sky'
 import Sky from '../models/Sky'
+import Bird from '../models/Bird'
 const Home = () => {
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -26,12 +27,15 @@ const Home = () => {
     <section className='w-full h-screen relative'>
       <Canvas className='w-full h-screen bg-transparent' camera={{ near: 0.1, far: 1000 }}>
         <Suspense fallback={<Loader />}>
+          
           <directionalLight position={[1,1,1]} intensity={2}/>
           <ambientLight intensity={1}/>
           <pointLight />
           <spotLight />
           <hemisphereLight skycolor="#b1e1ff" groundColor="#000000"
           intensity={0.0}/>
+
+          <Bird/>
           <Sky/>
           <Island
             position={islandPosition}
