@@ -69,7 +69,7 @@ const Home = () => {
 
   // Call the function to get the values
   const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
-
+// 48.22
   return (
     <section className='w-full h-screen relative'>
       <Canvas className='w-full h-screen bg-transparent' camera={{ near: 0.1, far: 1000 }}>
