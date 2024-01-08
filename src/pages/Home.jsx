@@ -5,6 +5,7 @@ import {Island} from '../models/Island'
 // import Sky from '../models/Sky'
 import Sky from '../models/Sky'
 import Bird from '../models/Bird'
+import Plane  from '../models/Plane'
 const Home = () => {
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -42,6 +43,7 @@ const Home = () => {
             scale={islandScale}
             rotation={islandRotation}
           />
+          <Plane/>
 
         </Suspense>
       </Canvas>
