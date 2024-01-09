@@ -21,6 +21,7 @@ export function Island({
   setIsRotating,
   setCurrentStage,
   currentFocusPoint,
+  
   ...props
 }) {
   const islandRef = useRef();
