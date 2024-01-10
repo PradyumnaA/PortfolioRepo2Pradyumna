@@ -21,7 +21,7 @@ export function Island({
   setIsRotating,
   setCurrentStage,
   currentFocusPoint,
-  
+
   ...props
 }) {
   const islandRef = useRef();
@@ -54,6 +54,7 @@ export function Island({
     event.stopPropagation();
     event.preventDefault();
     setIsRotating(false);
+    gl.domElement.style.cursor = 'grab';
   };
 
   // Handle pointer (mouse or touch) move event
