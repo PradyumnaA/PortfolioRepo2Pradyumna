@@ -27,12 +27,29 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle form submission logic, like sending data to server
-    setIsLoading(true);
-    // Simulating async operation (e.g., API call) for demonstration
-    setTimeout(() => {
-      // After async operation completes
-      setIsLoading(false);
-    }, 2000); // Simulating 2 seconds delay, replace it with actual async operation
+   setIsLoading(true);
+   emailjs.send(
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      {
+        from_name:form.name,
+        to_name:"Pradyumna",
+        from_email:form.email,
+        to_email:'pradyumkubeara@gmail.com',
+        message:form.message
+      },
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+
+   ).then(()=>{
+    setIsLoading(false);
+    // TODO Show success message
+    // TODO Hide an alert
+    setForm({name:'',email:'',message:''})
+   }).catch((error)=>{
+    setIsLoading(false);
+    console.log(error)
+    // SHOW ERROR MESSAGE
+   })
   };
 
   return (
